@@ -18,12 +18,19 @@ class Menu extends Phaser.Scene {
             fixedWidth: 0
         }
 
+        this.background = this.add.image(game.canvas.width / 2, game.canvas.height / 2, 'start');
+
         //     Menu Text
-        this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding,
-            'Stuck Behind a Bus', menuConfig).setOrigin(0.5)
+        // this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding,
+        //     'Stuck Behind a Bus', menuConfig).setOrigin(0.5)
         menuConfig.color = '#FFFFFF';
         this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding,
             'Press Enter to start', menuConfig).setOrigin(0.5)
+
+        menuConfig.align = 'center';
+        menuConfig.fontSize = '28px';
+        this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding + 325,
+            'Use left and right arrow keys to get past the bus', menuConfig).setOrigin(0.5)
 
         this.enterKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
 
